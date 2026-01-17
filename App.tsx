@@ -18,7 +18,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-[#FDFBF7]">
       <Navbar />
 
-      {/* Hero Section - Acentos en Verde y Amarillo */}
+      {/* Hero Section */}
       <section id="inicio" className="pt-40 pb-20 flex items-center justify-center border-b border-yellow-100 bg-gradient-to-b from-green-50/30 to-transparent">
         <div className="text-center px-4 max-w-4xl">
           <div className="flex justify-center gap-2 mb-6">
@@ -33,9 +33,8 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Historia Section - Diseño con bloques de color */}
+      {/* Historia Section */}
       <section id="nosotros" className="py-24 bg-white relative overflow-hidden">
-        {/* Decoración lateral sutil */}
         <div className="absolute top-0 left-0 w-1 h-full bg-green-600"></div>
         <div className="absolute top-0 left-1 w-1 h-full bg-yellow-400"></div>
 
@@ -57,7 +56,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* ESPECIALIDADES SECTION - Tarjetas con bordes de color */}
+      {/* ESPECIALIDADES SECTION */}
       <section id="platos-estrella" className="py-24 bg-white border-t border-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
@@ -86,7 +85,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CARTA SECTION - Estética clásica con tipografía en color */}
+      {/* CARTA SECTION */}
       <section id="carta" className="py-24 bg-[#FDFBF7]">
         <div className="max-w-4xl mx-auto px-6 text-center mb-24">
           <h2 className="text-4xl md:text-5xl mb-6 serif text-[#1A1A1A]">La Carta</h2>
@@ -122,7 +121,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* SECCIÓN CÓDIGO QR - Colores corporativos */}
+      {/* SECCIÓN CÓDIGO QR */}
       <section className="py-20 bg-white border-y-4 border-yellow-400">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-2xl serif mb-10 text-green-900">Carta Digital</h2>
@@ -139,7 +138,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CONTACTO & HORARIOS - Fondo verde oscuro */}
+      {/* CONTACTO & HORARIOS */}
       <section id="contacto" className="py-24 bg-green-950 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl mb-12 serif text-yellow-400">Información</h2>
@@ -169,15 +168,24 @@ const App: React.FC = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-black text-white py-12">
+      <footer className="bg-black text-white py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex justify-center gap-2 mb-6">
             <div className="w-4 h-1 bg-green-600"></div>
             <div className="w-4 h-1 bg-yellow-400"></div>
           </div>
-          <p className="text-gray-500 text-[9px] uppercase tracking-[0.4em] font-bold">
+          <p className="text-gray-500 text-[9px] uppercase tracking-[0.4em] font-bold mb-4">
             © {new Date().getFullYear()} LICEO DE ARTESANOS OLIVENZA · EXCELENCIA ARTESANA
           </p>
+          <div className="pt-8 border-t border-white/5">
+            <p className="text-gray-600 text-[10px] uppercase tracking-widest mb-2">Web oficial:</p>
+            <a 
+              href={currentUrl} 
+              className="text-yellow-400/60 hover:text-yellow-400 transition-colors text-xs font-light tracking-wider underline underline-offset-4"
+            >
+              {currentUrl.replace('https://', '').replace('http://', '').replace(/\/$/, '')}
+            </a>
+          </div>
         </div>
       </footer>
     </div>
