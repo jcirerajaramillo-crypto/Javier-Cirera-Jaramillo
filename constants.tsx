@@ -12,11 +12,11 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     id: 'sd1',
     name: 'Canelón de Bogavante',
     description: 'Una joya del mar. Pasta fina artesana rellena de carne selecta de bogavante, bañada en una sedosa crema de marisco y gratinada ligeramente al horno.',
-    price: '15.00€',
+    price: '16.00€',
     category: 'principales',
     allergens: ['Gluten', 'Crustáceos', 'Lácteos'],
     artisanNote: 'Elaboramos el relleno diariamente para asegurar que la textura del bogavante se mantenga firme y jugosa.',
-    imageUrl: 'https://files.oaiusercontent.com/file-m5I5R6S43G1U29G1N6G1U29G',
+    imageUrl: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&q=80&w=800',
     photoSpecs: 'Primer plano del relleno jugoso con su salsa cremosa.'
   },
   {
@@ -27,7 +27,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     category: 'principales',
     allergens: ['Pescado', 'Huevo'],
     artisanNote: 'El secreto está en el punto del huevo: debe quedar meloso, nunca seco, respetando el tiempo del fuego.',
-    imageUrl: 'https://files.oaiusercontent.com/file-m5I5R6S43G1U29G1N6G1U29G',
+    imageUrl: 'https://images.unsplash.com/photo-1534948665823-7683fd212ce5?auto=format&fit=crop&q=80&w=800',
     photoSpecs: 'Presentación tradicional con aceitunas negras sobre fuente blanca.'
   },
   {
@@ -38,7 +38,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     category: 'principales',
     allergens: ['Gluten', 'Lácteos', 'Huevo'],
     artisanNote: 'Un plato para compartir. Utilizamos un empanado doble para conseguir ese crujiente exterior tan característico.',
-    imageUrl: 'https://files.oaiusercontent.com/file-m5I5R6S43G1U29G1N6G1U29G',
+    imageUrl: 'https://images.unsplash.com/photo-1623961990059-28356e226a77?auto=format&fit=crop&q=80&w=800',
     photoSpecs: 'Corte transversal que muestra el queso fundido y el relleno ibérico.'
   }
 ];
@@ -69,16 +69,17 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 'c4', name: 'Filetes de Lomo Empanados con Patatas', description: 'Un clásico que nunca falla.', price: '7.50€', category: 'principales', allergens: ['Gluten', 'Huevo'] },
 
   // PESCADOS Y MARISCOS
-  { id: 'pm1', name: 'Bacalao a la Nata', description: 'Suave y cremoso.', price: '15.00€', category: 'postres', allergens: ['Pescado', 'Lácteos'] },
-  { id: 'pm2', name: 'Lomo de Bacalao a la Brasa con Guarnición', description: 'Sabor puro a parrilla.', price: '22.00€', category: 'postres', allergens: ['Pescado'] },
-  { id: 'pm3', name: 'Bacalao Dorado', description: 'Receta tradicional lusa.', price: '14.00€', category: 'postres', allergens: ['Pescado', 'Huevo'] },
-  { id: 'pm4', name: 'Boquerones Fritos', description: 'Fritura andaluza impecable.', price: '11.00€', category: 'postres', allergens: ['Pescado', 'Gluten'] },
-  { id: 'pm5', name: 'Cazón en Adobo', description: 'Marinado tradicional.', price: '11.00€', category: 'postres', allergens: ['Pescado', 'Gluten'] },
-  { id: 'pm6', name: 'Rejos Fritos', description: 'Crujientes y sabrosos.', price: '12.00€', category: 'postres', allergens: ['Moluscos', 'Gluten'] },
-  { id: 'pm7', name: 'Pulpo a la Gallega', description: 'Con pimentón y cachelos.', price: '22.00€', category: 'postres', allergens: ['Moluscos'] },
-  { id: 'pm8', name: 'Canelón de Bogavante', description: 'Nuestra especialidad de la casa.', price: '15.00€', category: 'postres', allergens: ['Gluten', 'Crustáceos'] },
+  // Usamos una subcategoría lógica para filtrarlos correctamente en la UI
+  { id: 'pm1', name: 'Bacalao a la Nata', description: 'Suave y cremoso.', price: '15.00€', category: 'principales', allergens: ['Pescado', 'Lácteos'] },
+  { id: 'pm2', name: 'Lomo de Bacalao a la Brasa con Guarnición', description: 'Sabor puro a parrilla.', price: '22.00€', category: 'principales', allergens: ['Pescado'] },
+  { id: 'pm3', name: 'Bacalao Dorado', description: 'Receta tradicional lusa.', price: '14.00€', category: 'principales', allergens: ['Pescado', 'Huevo'] },
+  { id: 'pm4', name: 'Boquerones Fritos', description: 'Fritura andaluza impecable.', price: '11.00€', category: 'principales', allergens: ['Pescado', 'Gluten'] },
+  { id: 'pm5', name: 'Cazón en Adobo', description: 'Marinado tradicional.', price: '11.00€', category: 'principales', allergens: ['Pescado', 'Gluten'] },
+  { id: 'pm6', name: 'Rejos Fritos', description: 'Crujientes y sabrosos.', price: '12.00€', category: 'principales', allergens: ['Moluscos', 'Gluten'] },
+  { id: 'pm7', name: 'Pulpo a la Gallega', description: 'Con pimentón y cachelos.', price: '22.00€', category: 'principales', allergens: ['Moluscos'] },
+  { id: 'pm8', name: 'Canelón de Bogavante', description: 'Nuestra especialidad de la casa.', price: '16.00€', category: 'principales', allergens: ['Gluten', 'Crustáceos'] },
 
-  // POSTRES
+  // POSTRES (Corregidos)
   { id: 'po1', name: 'Arroz con Leche', description: 'Casero, con canela.', price: '4.00€', category: 'postres', allergens: ['Lácteos'] },
   { id: 'po2', name: 'Baba de Camello', description: 'Postre tradicional de dulce de leche.', price: '4.00€', category: 'postres', allergens: ['Lácteos', 'Huevo'] },
   { id: 'po3', name: 'Serradura', description: 'Típica delicia de nata y galleta.', price: '4.00€', category: 'postres', allergens: ['Gluten', 'Lácteos'] }
