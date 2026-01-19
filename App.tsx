@@ -8,14 +8,15 @@ const App: React.FC = () => {
   const menuCategories = [
     { id: 'ensaladas', title: 'Ensaladas', filter: (item: any) => item.category === 'entrantes' },
     { id: 'picar', title: 'Para Picar', filter: (item: any) => item.category === 'vinos' },
-    { id: 'carnes', title: 'Carnes', filter: (item: any) => item.category === 'principales' && !item.name.toLowerCase().includes('bacalao') && !item.name.toLowerCase().includes('boquerones') && !item.name.toLowerCase().includes('cazón') && !item.name.toLowerCase().includes('rejos') && !item.name.toLowerCase().includes('pulpo') && !item.name.toLowerCase().includes('canelón') },
-    { id: 'pescados', title: 'Pescados y Mariscos', filter: (item: any) => item.category === 'principales' && (item.name.toLowerCase().includes('bacalao') || item.name.toLowerCase().includes('boquerones') || item.name.toLowerCase().includes('cazón') || item.name.toLowerCase().includes('rejos') || item.name.toLowerCase().includes('pulpo') || item.name.toLowerCase().includes('canelón')) },
+    { id: 'arroces', title: 'Arroces', filter: (item: any) => item.id.startsWith('a') },
+    { id: 'carnes', title: 'Carnes', filter: (item: any) => item.category === 'principales' && (item.id.startsWith('c') || item.name === 'Cachopo de Ternera') },
+    { id: 'pescados', title: 'Pescados y Mariscos', filter: (item: any) => item.category === 'principales' && (item.id.startsWith('pm') || item.name.includes('Bacalao')) && item.name !== 'Canelón Grande de Bogavante' },
     { id: 'postres', title: 'Postres', filter: (item: any) => item.category === 'postres' }
   ];
 
   // Especialidades de la casa
   const specialties = [
-    { name: 'Canelón de Bogavante', price: '16.00€', desc: 'Nuestra joya artesana rellena de bogavante selecto.' },
+    { name: 'Canelón Grande de Bogavante', price: '9.00€/ud', desc: 'Nuestra joya artesana rellena de bogavante selecto.' },
     { name: 'Cachopo de Ternera', price: '22.00€', desc: 'Ternera de primera con jamón ibérico y queso fundente.' },
     { name: 'Bacalao Dorado', price: '14.00€', desc: 'El clásico luso con el punto perfecto de cremosidad.' }
   ];
@@ -64,7 +65,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Especialidades de la Casa - REUBICADA DEBAJO DE HISTORIA */}
+      {/* Especialidades de la Casa */}
       <section id="especialidades" className="py-24 bg-[#FDFBF7] relative border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -104,9 +105,12 @@ const App: React.FC = () => {
               <div className="grid gap-y-8 md:grid-cols-2 md:gap-x-12">
                 {MENU_ITEMS.filter(cat.filter).map(item => (
                   <div key={item.id} className="flex flex-col border-b border-gray-100 pb-2">
-                    <div className="flex justify-between">
-                        <span className="text-sm font-medium">{item.name}</span>
-                        <span className="font-serif text-green-800 text-sm">{item.price}</span>
+                    <div className="flex justify-between items-start">
+                        <div>
+                          <span className="text-sm font-medium block">{item.name}</span>
+                          <span className="text-[11px] text-gray-400 italic font-light leading-tight">{item.description}</span>
+                        </div>
+                        <span className="font-serif text-green-800 text-sm whitespace-nowrap ml-4">{item.price}</span>
                     </div>
                     {item.allergens.length > 0 && (
                         <div className="flex gap-1 mt-1">
